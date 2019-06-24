@@ -1,34 +1,63 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Logo from "./logo"
+import Headroom from "react-headroom"
+
+import "./header.css"
+
 
 const Header = ({ siteTitle }) => (
+<Headroom
+
+    style={{
+      zIndex: '9999',
+      boxShadow: '1px 1px 1px rgba(0,0,0,0.25)',
+    }}
+>
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: `#363636`
     }}
   >
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        maxWidth: 1200
       }}
     >
-      <h1 style={{ margin: 0 }}>
         <Link
           to="/"
           style={{
-            color: `white`,
+            color: `#50e3c2`,
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+        <Logo
+            alt={{siteTitle}}
+          style={{  }}
+        />
         </Link>
-      </h1>
+    </div>
+    <div
+      style={{
+        position:`absolute`,
+        right: `20%`,
+        bottom: `1.45em`
+      }}
+    >
+    <Link
+      to="/about"
+      style={{
+        color: `#50e3c2`,
+        textDecoration: `none`,
+      }}
+    >
+    About
+    </Link>
     </div>
   </header>
+</Headroom>
 )
 
 Header.propTypes = {

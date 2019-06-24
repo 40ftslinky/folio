@@ -1,0 +1,50 @@
+.headroom {
+}
+
+/* header --------------------------------- */
+
+.main_wrapper { padding: 0;}
+/* .main_wrapper { margin-top: 5rem;} */
+
+header{
+  width: 100%;
+  padding: 10px 0;
+  background: #363636;
+  border-bottom: 1px solid #222222;  
+}
+header h1{
+  font-size: 30px;
+  text-indent: 40px;
+  font-weight:  bold;
+}
+.container{
+  /* width: 40%;
+  margin: 180px auto; */
+}
+
+
+.logo {
+  max-width: 200px;
+}
+
+/* ********************** */
+/* ********************** */
+/* uncomment all below to */
+/* hack "react-headroom" to make shrinking logo */
+/* ********************** */
+/* ********************** */
+
+.logo {
+  /* animation magic */
+  /*
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  */
+}
+header{
+/* position: fixed; */
+}
+.headroom--unpinned .logo {
+  /* max-width: 100px; */
+}

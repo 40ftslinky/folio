@@ -1,21 +1,64 @@
 import React from "react"
 import { Link } from "gatsby"
+import { graphql } from "gatsby";
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+const BlogPost = ({node}) => {
+  return (
+    <article class="work_feed-item">
+      <div class="work_feed_container">
+        <figure class="work_feed-bg" id={node.title} style={{ }} >
+          <img src={node.heroImage.fluid.src} alt={node.title} />
+        </figure>
+        <div class="work_feed-info">
+          <Link to={node.slug}>
+          <div>
+          <div><h3>{node.title}</h3></div>
+          <div>{node.body.childMarkdownRemark.excerpt}</div>
+          </div>
+          </Link>
+        </div>
+      </div>
+    </article>
+  )
+}
+const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <section>
+      {data.allContentfulBlog.edges.map((edge) => <BlogPost node={edge.node} />)}
+    </section>
   </Layout>
 )
 
 export default IndexPage
+
+export const pageQuery = graphql`
+   query pageQuery {
+    allContentfulBlog (
+    filter: {
+      node_locale: {eq: "en-US"}
+    },
+    sort:{ fields: [publishDate], order: DESC }
+    ) {
+        edges {
+          node {
+            title
+            slug
+            body {
+              childMarkdownRemark {
+                excerpt
+              }
+            }
+            heroImage {
+              fluid(maxHeight: 1080, quality: 90) {
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
+        }
+    }
+   }
+`
