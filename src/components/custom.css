@@ -115,3 +115,9 @@ figure img {
   object-fit: cover;
 
 }
+
+
+video, .work_video {
+    width: 100vw !important;
+}
+.work_img img[src$=""]{display:none;}

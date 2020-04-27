@@ -5,15 +5,17 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+
 const BlogPost = ({node}) => {
   return (
-    <article class="work_feed-item">
-      <div class="work_feed_container">
-        <figure class="work_feed-bg" id={node.title} style={{ }} >
+    <article className="work_feed-item">
+      <div className="work_feed_container">
+        <figure className="work_feed-bg" id={node.title} style={{ }} >
           <img src={node.heroImage.fluid.src} alt={node.title} />
         </figure>
-        <div class="work_feed-info">
+        <div className="work_feed-info">
           <Link to={node.slug}>
+          {/*<Link to={`/${node.slug}/`}>*/}
           <div>
           <div><h3>{node.title}</h3></div>
           <div>{node.body.childMarkdownRemark.excerpt}</div>
@@ -28,11 +30,10 @@ const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" />
     <section>
-      {data.allContentfulBlog.edges.map((edge) => <BlogPost node={edge.node} />)}
+      {data.allContentfulBlog.edges.map((edge,i) => <BlogPost node={edge.node}  key={'proj' + i} />)}
     </section>
   </Layout>
 )
-
 export default IndexPage
 
 export const pageQuery = graphql`

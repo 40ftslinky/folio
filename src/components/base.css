@@ -1,5 +1,38 @@
 /* base / reset --------------------------------- */
 
+:root {
+  --main-color: #50e3c2; /* green */
+  --main-color-light: #8fedd8; /* light-green */
+  --main-color-dark: #00856A; /* dark-green */
+  --main-secondary-color: #BC85FF; /* purple */
+  --main-secondary-color-dark: #8B63BD; /* dark-purple */
+  --main-dark-grey: #363636; /* dark grey */
+  --normal-type: "Effra", Arial, sans-serif;
+  --bold-type: "Effra-Bold", Arial, sans-serif;
+  --light-type: "Effra-Light", Arial, sans-serif;
+  --xbold-type: "Effra-ExtraBold", Arial, sans-serif;
+  /* */
+  --vh-80: 80vh;
+  --vh-100: 100vh;
+  /* */
+  --trans_lr_fadein: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 0s, opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+  /*  */
+  /* RGB */
+  --orange : rgba(255, 166, 89, 1);
+  /* #FFA659 - orange */
+  --purple: rgba(188, 133, 255, 1);
+  /* #BC85FF - purple */
+  --green: rgba(80, 227, 194, 1);
+  /* #50e3c2 - green */
+  --light-green: rgba(143, 237, 216, 1);
+  /* #8fedd8 - light-green */
+  --dark-grey: rgba(54, 54, 54, 1);
+  --dark-grey-50: rgba(54, 54, 54, 0.5);
+  /* #363636 - dark grey */
+  --playfair: 'Playfair Display', serif;
+
+}
+
 
 *,
 *::before,
@@ -7,15 +40,17 @@
   box-sizing: border-box;
 }
 
-body, div, p {font-family: effra, sans-serif;}
+body, div, p {
+  /* font-family: effra, sans-serif; */
+  font-family: var(--normal-type);
+  line-height: 1.4;
+}
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  /* font-family: big-caslon-fb, serif; */
-  font-family: 'Playfair Display', serif;
-  /* font-weight: 700; */
+  font-family: var(--playfair);
   font-weight: 900;
   font-style: normal;
-  color: #50e3c2;
+  color: var(--main-color);
 }
 
 a {color: unset; text-decoration: none;}
@@ -31,4 +66,26 @@ footer {
   color: #222222;
   background-color: #50e3c2;
   font-size: .8em;
+}
+
+
+
+/* Small Sreen / ≥ 568px */
+@media screen and (max-width: 35.5em) {
+
+}
+
+/* Medium Sreen / ≥ 768px */
+@media screen and (min-width: 48em) {
+
+}
+
+/* Large Sreen / ≥ 1024px */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Extra Large Sreen / ≥ 1280px */
+@media screen and (min-width: 80em) {
+
 }

@@ -3,16 +3,32 @@
 
 .about_inner {}
 
-.about_text_wrap{
-  max-width: 1200px;
+.section_wrap,
+.about_text_wrap,
+.client_title {
+  width: 90%;
+  max-width: 90vw;
   margin: 2rem auto;
+  clear: both;
+}
+
+/* Large Sreen / ≥ 1024px */
+@media screen and (min-width: 64em) {
 
 }
 
-.about_info { padding: 10vh 0 12vh ; }
+/* Extra Large Sreen / ≥ 1280px */
+@media screen and (min-width: 80em) {
+    .section_wrap {
+      max-width: 1200px;
+    }
+}
+
+.about_info {
+  padding: 10vh 0 6vh ;
+}
 
 .about_title {
-  /* font-family: effra, sans-serif;  */
 }
 
 .about_description {
@@ -24,58 +40,101 @@
   background-color: #50e3c2;
 }
 .about_body {}
-
-.client_title {
-    max-width: 1200px;
-    margin: 2rem auto 9rem;
-    clear: both;
+.about_copy {
+  max-width: 800px;
+  /* columns: 2; */
 }
-    .client_title_heading {}
+.about_copy p.copy {
+  font-size: 1.2rem;
+  line-height: 1.75;
+}
+
+.about_copy a {}
+.about_copy a:hover {}
+
+.about_copy a {
+  background-color: var(--main-color);
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.about_copy p a,
+.about_copy a {
+  display: block;
+  max-width: 300px;
+  text-align: center;
+  margin: 2em 0;
+}
+/* max-width 768px, portrait tablet */
+@media only screen and (max-width: 48em) {
+  .about_copy a {
+    max-width: unset !important;
+    width: 100% !important;
+  }
+}
+
+.about_copy a:hover {
+  background-color: var(--main-secondary-color);
+  transition: var(--trans_lr_fadein);
+}
+
+.about_copy a:active {
+  background-color: var(--main-dark-grey);
+}
+
+.about_copy a:visited {
+  background-color: white;
+}
+
+.client_title {}
+.client_title_heading {}
 
 .client_section {
     margin-bottom: 9rem;
-
 }
 .client_wrap {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
   max-width: 1200px;
-  margin: 2rem auto;
-}
-.client_logo {
-  width: 15%;
-  display: inline-block;
-  position: relative;
-  margin-right: 6.25%;
-  margin-top: -50%;
-  margin-bottom: 40px;
-  transform: translate(0, 50%);
+  padding-top: 1vh;
 
 }
-.client_logo:nth-of-type(5) { margin-right: 0 }
-.client_logo img {
-  /* max-width: 200px; */
+.client_wrap::after, .client_title::after, .section_wrap::after {
+  clear: both;
+}
+
+.client_logo {
+  /* padding: 1vh; */
+  /* transform: translate(0, 50%); */
+  width: 20%;
+  max-width: 20%;
+  margin-right: 0;
   margin-bottom: 40px;
+  text-align: center;
+
+}
+
+.client_logo img {
+  max-width: 150px;
+  width: 15vw;
+
+}
+
+.client_logo img {
   opacity: .3;
   filter: grayscale();
   -webkit-filter: grayscale();
   transform: scale(1.0);
   -webkit-transform: scale(1.0);
-  -webkit-transition-property: opacity,transform, filter;
-  transition-property: opacity,transform, filter;
-  -webkit-transition:
-    -webkit-transform 200ms ease,
-    opacity 1s ease,
-    transform 1s ease,
-    -webkit-filter 1s ease;
-  -webkit-transition:
-    transform 200ms ease,
-    opacity 1s ease,
-    transform 1s ease
-    filter 1s ease;
-  transition:
-    transform 200ms ease,
-    opacity 1s ease
-    transform 1s ease,
-    filter 1s ease;
+  -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
 }
 
 .client_logo:hover img {
@@ -86,8 +145,34 @@
 }
 
 
+/* max-width 1024px, portrait tablet */
+@media only screen and (max-width: 64em) {
+  .client_logo {
+  }
+  .client_logo img { max-width: 150px; }
+}
+/* max-width 768px, portrait tablet */
+@media only screen and (max-width: 48em) {
+  .client_logo{
+    width: 22.5vw;
+    margin-right: 6.25%;
+    margin-bottom: 40px;
+  }
+  .client_logo img { max-width: 22.5vw; }
+}
+/* Extra Large Sreen / ≥ 1280px */
+@media screen and (min-width: 80em) {
+    /* .client_logo:nth-of-type(1) { text-align: left;}
+    .client_logo:nth-of-type(5) { text-align: right; } */
+}
+
+
 /* max-width 768px, portrait tablet */
 @media only screen and (max-width: 48em) {
   .about_info { padding: 10vh 15px 12vh ; }
+
+}
+@media only screen and (max-width: 36em) {
+  .about_info { padding-top: 3vh; }
 
 }

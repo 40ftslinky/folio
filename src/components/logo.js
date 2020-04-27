@@ -20,17 +20,20 @@ const Logo = () => (
         placeholderImage: file(relativePath: { eq: "40ftSlinky_logo.png" }) {
           childImageSharp {
             fluid(quality: 90) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
       }
     `}
     render={data =>
+
       <Img
-      className="logo"
-      alt="40ftSlinky"
-      fluid={data.placeholderImage.childImageSharp.fluid} />}
+        className="logo"
+        alt="40ftSlinky"
+        fluid={data.placeholderImage.childImageSharp.fluid}
+      />
+    }
   />
 )
 export default Logo

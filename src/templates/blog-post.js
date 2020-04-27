@@ -2,20 +2,23 @@ import React from 'react'
 import img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
+// import Video from "../components/video"
+import SEO from "../components/seo"
 
-import "../components/work.css"
-
+/*
+Note:
+Once you make changes in Contentful editor,
+you need to restart your development server.
+*/
 
 export default ({ data }) => (
 
-
-
   <Layout>
+    <SEO title="Work" />
     <div className="work_inner">
 
-
-      <div class="work_info">
-        <div class="work_text_wrap">
+      <div className="work_info">
+        <div className="work_text_wrap">
           <h1 className="work_title">{data.contentfulBlog.title}</h1>
           <div
             className="work_description"
@@ -29,25 +32,50 @@ export default ({ data }) => (
               __html: data.contentfulBlog.body.childMarkdownRemark.html,
             }}
           />
-          </div>
         </div>
-
-        <div className="work_hero_image_wrap">
-          <img src={data.contentfulBlog.heroImage.fluid.src} alt={data.contentfulBlog.title + '_hero'}/>
-        </div>
-
-        <div className="work_gallery">
-          <div class="work_items">
-            {data.contentfulBlog.articleImage.map(({ fluid }) => (
-              <div class="work_item">
-                <img alt={data.contentfulBlog.title + '_item'} key={fluid.src} src={fluid.src} />
-              </div>
-            ))}
-          </div>
-        </div>
-
-
       </div>
+
+      <div className="work_gallery">
+        <div className="work_items">
+
+            {data.contentfulBlog.articleImage.map(({ file, description, fluid }, i) => (
+              <div className="work_item" key={'item_' + i} >
+
+              <div className="work_item-desc_bg">
+                <div className="work_item-desc">
+                  <div className="work_item-desc_txt" key={'desc_' + i} >{description}</div>
+                </div>
+              </div>
+
+
+              {file.contentType === "image/jpeg" ? (
+
+                    <img className="work_img"
+                      alt={data.contentfulBlog.title + '_' + i}
+                      key={'image_' + i}
+                      // src={file.url}
+                      src={fluid.src}
+                      // fluid={data.contentfulBlog.articleImage[i].fluid.src}
+                    />
+
+                  ): (
+
+                  //  if video
+//autoPlay loop
+                    <video autoPlay loop muted playsInline className="work_video">
+                      <source src={file.url} type="video/mp4"></source>
+                    </video>
+                  )
+                }
+
+              </div>
+
+            ))}
+
+        </div>
+      </div>
+
+    </div>
   </Layout>
 )
 
@@ -72,8 +100,15 @@ export const query = graphql`
         }
       }
       articleImage {
+        id
         fluid(maxHeight: 1080, quality: 90) {
           ...GatsbyContentfulFluid
+        }
+        description
+        file {
+          url
+          fileName
+          contentType
         }
       }
     }

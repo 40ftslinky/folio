@@ -1,0 +1,25 @@
+/* basic.css */
+
+
+.section_wrap,
+.page_text_wrap,
+.page_title {
+  width: 90%;
+  max-width: 90vw;
+  margin: 2rem auto;
+  clear: both;
+}
+
+/* Large Sreen / ≥ 1024px */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Extra Large Sreen / ≥ 1280px */
+@media screen and (min-width: 80em) {
+    .section_wrap {
+      max-width: 1200px;
+    }
+}
+
+.boogey { color: red; }
