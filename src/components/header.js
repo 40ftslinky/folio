@@ -42,11 +42,11 @@ const Header = ({ siteTitle, menuLinks }) => (
             </Link>
           </div>
 
-          {/* // eslint-disable-next-line */}
-          <label className="burger" htmlFor="burger-check">
+
           <input className="burger-check" id="burger-check" type="checkbox" aria-label="label"></input>
           {/* <!-- hamburger --> */}
-          </label>
+          {/* // eslint-disable-next-line */}
+          <label className="burger" htmlFor="burger-check"></label>
           <div id="navigation_id" className="navigation">
               {/* mobile */}
               <ul className="navbar-list-mob ">

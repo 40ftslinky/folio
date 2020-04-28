@@ -38,6 +38,9 @@
     float: right;
     margin-right: 5vw;
   }
+  .burger-check {
+    margin-right: 0;
+  }
   .burger{
     /* margin-top: -45px; */
   }
