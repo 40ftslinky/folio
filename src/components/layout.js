@@ -35,7 +35,10 @@ const Layout = ({ children }) => (
       <>
         <Helmet>
           {/* add custom font */}
+          {/* effra */}
           <link rel="stylesheet" href="https://use.typekit.net/vds2fdi.css" />
+          {/* add custom font */}
+          
           <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900&display=swap" rel="stylesheet" />
           {/* add cdn jquery */}
           <script

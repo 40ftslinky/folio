@@ -85,42 +85,7 @@ const Header = ({ siteTitle, menuLinks }) => (
               </li>
               </ul>
           </div>
-          {/* desktop */}
-          <ul className="navbar-list">
-            {menuLinks.map(link => (
-              <li
-                className="navbar-item"
-                key={link.name}
-              >
-                <Link
-                  className="menu_item"
-                  to={link.link}>
-                  {link.name}
-                </Link>
-              </li>
-
-            ))}
-            <li className="navbar-item navbar-item_dropdown">
-
-              <a
-                className="nav-link dropdown-toggle"
-                key={'dropdown'}
-                href="/#"
-                id="navbarDropdown"
-                // role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                // aria-expanded="false"
-              >
-                Projects
-              </a>
-              <ul className="dropdown" aria-label="submenu">
-                {/* <div className="dropdown-menu" aria-labelledby="navbarDropdown"> */}
-                <DropDownLink key={'submenu'}></DropDownLink>
-                {/* </div> */}
-              </ul>
-            </li>
-          </ul>
+          
 
         </div>
 

@@ -25,6 +25,9 @@ header h1{
 
 
 .logo {
+  z-index: 99;
+  position: relative;
+  margin-top: 10px;
   max-width: 200px;
   transform: scale(1.00);
   -webkit-transition: all 0.5s ease;
@@ -42,7 +45,7 @@ header h1{
 .logo:hover .svg_logo,
 .svg_logo:hover {
   /* fill:var(--purple); */
-  fill:#363636;
+  /* fill:#363636; */
 }
 
 /* ********************** */
