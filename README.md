@@ -7,9 +7,21 @@
 - [x] load either image or Video
 - [ ] [optimize images via
            ...GatsbyContentfulFluid]
-- [ ]
 - [ ] import image description
-- [ ]  [deploy to netlify]
+
+- [x] integrate github
+- [ ] make github repo private
+- [x] [deploy to netlify]
+      (rebuild site whenever we push new code)
+- [x] add netlify webhook from contentful
+      (rebuild site whenever we publish new content)
+
+- [ ] add mailchimp form
+https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp/
+
+- [ ] add zapier / airtable integration
+
+- [ ]
 
 
 ## note: content changes
