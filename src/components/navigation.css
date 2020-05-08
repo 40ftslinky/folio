@@ -215,7 +215,7 @@ li.navbar-item {
   .navbar {
     max-width: 1200px;
     margin: 0 auto;
-    width: 75vw;
+    /* width: 75vw; */
     margin-left:calc((100vw - 1200px) / 2); /* 12.5vw */
   }
   .navbar, .navbar > .container {
@@ -266,27 +266,28 @@ nav, .navigation{
       -webkit-transition: all .2s ease-in-out;
       -moz-transition: all .2s ease-in-out;
       transition: all .2s ease-in-out;
+      margin-bottom: 0;
     }
 
     .navigation ul li:hover{
       /* background: rgba(0,0,0,.15); */
       color:#fff;
     }
-    .navigation ul li{
-      float: left;
-      -webkit-transition: all .2s ease-in-out;
-      -moz-transition: all .2s ease-in-out;
-      transition: all .2s ease-in-out;
-      margin-bottom: 0;
-    }
       .navigation ul li a{
+        font-family: var(--bold-type);
+        font-weight: 700;
         display: block;
         padding: 30px 20px;
         color: var(--green);
-        font-size: .9em;
+        font-size: 0.8em;
         letter-spacing: 1px;
         text-decoration: none;
-        /* text-transform: uppercase; */
+        text-transform: uppercase;
+      }
+      .navigation ul ul li a{
+        font-family: var(--normal-type);
+        font-weight: 400;
+        text-transform: none;
       }
       .navigation ul li a.dropdown-toggle{
         height: 90px;
@@ -301,7 +302,7 @@ nav, .navigation{
       }
 
       .navigation ul ul.dropdown{
-        display: none;
+        /* display: none; */
         /* background: var(--dark-grey); */
         /* background: rgba(45, 45, 45, 0.95); */
         position: absolute;
@@ -312,24 +313,39 @@ nav, .navigation{
         left: 0;
         text-align: left;
         float: right;
-        width: 320px;
+
+        -webkit-transition: all 0.52s ease;
+        -o-transition: all 0.25s ease;
+        transition: all 0.25s ease;
       }
       @media (min-width: 64.001rem) {
         .navigation ul ul.dropdown {
-          opacity: 0;
           background: rgba(45, 45, 45, 0.95);
+          width: 320px;
+          opacity: 0;
+          visibility: hidden;
+          z-index: 0;
+          max-height: 0;
+          overflow: hidden;
         }
         .navigation ul li:hover > ul {
           display: block;
+          /* float: left; */
           opacity: 1;
+          -webkit-transition: all .2s ease-in-out;
+          -moz-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+          margin-bottom: 0;
+          visibility: visible;
+          z-index: 1;
+          max-height: 100vh;
+          overflow: visible;
         }
       }
 
       .navigation ul li:hover ul.dropdown,
       .navigation ul li ul.dropdown {
-        -webkit-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
+
       }
         .navigation ul ul li{
           float: none;

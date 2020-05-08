@@ -1,5 +1,10 @@
 /* base / reset --------------------------------- */
 
+/*
+limiting the font to known letters — perhaps for a logo or heading, e.g:
+https://fonts.googleapis.com/css?family=Inconsolata&text=hello
+*/
+
 :root {
   --main-color: #50e3c2; /* green */
   --main-color-light: #8fedd8; /* light-green */
@@ -7,15 +12,23 @@
   --main-secondary-color: #BC85FF; /* purple */
   --main-secondary-color-dark: #8B63BD; /* dark-purple */
   --main-dark-grey: #363636; /* dark grey */
-  --normal-type: "Effra", Arial, sans-serif;
-  --bold-type: "Effra-Bold", Arial, sans-serif;
-  --light-type: "Effra-Light", Arial, sans-serif;
-  --xbold-type: "Effra-ExtraBold", Arial, sans-serif;
+  /* */
+  --normal-type: "Raleway", Arial, sans-serif;
+  /* font-weight:400; */
+  --bold-type: "Raleway", Arial, sans-serif;
+  /* font-weight:700; */
+  --light-type: "Raleway", Arial, sans-serif;
+  /* font-weight:300; */
+  --xbold-type: "Raleway", Arial, sans-serif;
+  /* font-weight:900; */
+
+
   /* */
   --vh-80: 80vh;
   --vh-100: 100vh;
   /* */
-  --trans_lr_fadein: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 0s, opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+  --trans_lr_fadein: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+  --trans_lr_fadeout: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
   /*  */
   /* RGB */
   --orange : rgba(255, 166, 89, 1);
@@ -43,6 +56,7 @@
 body, div, p {
   /* font-family: effra, sans-serif; */
   font-family: var(--normal-type);
+  /* font-weight:300; */
   line-height: 1.4;
 }
 

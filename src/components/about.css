@@ -67,18 +67,24 @@
   max-width: 300px;
   text-align: center;
   margin: 2em 0;
+  transition: var(--trans_lr_fadeout);
+  transform: scale(1);
 }
 /* max-width 768px, portrait tablet */
 @media only screen and (max-width: 48em) {
   .about_copy a {
     max-width: unset !important;
     width: 100% !important;
+    transition: var(--trans_lr_fadein);
+    transform: scale(1);
   }
 }
 
 .about_copy a:hover {
   background-color: var(--main-secondary-color);
   transition: var(--trans_lr_fadein);
+  transform: scale(1.05);
+  letter-spacing: 1.01;
 }
 
 .about_copy a:active {
