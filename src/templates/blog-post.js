@@ -41,11 +41,17 @@ export default ({ data }) => (
             {data.contentfulBlog.articleImage.map(({ file, description, fluid }, i) => (
               <div className="work_item" key={'item_' + i} >
 
-              <div className="work_item-desc_bg">
-                <div className="work_item-desc">
-                  <div className="work_item-desc_txt" key={'desc_' + i} >{description}</div>
-                </div>
-              </div>
+                    {description.length ? (
+                      <div className="work_item-desc_bg">
+                        <div className="work_item-desc">
+                          <div className="work_item-desc_txt" key={'desc_' + i} >{description}</div>
+                        </div>
+                      </div>
+                    ): (
+                      // no desc
+                      null
+                    )
+                  }
 
 
               {file.contentType === "image/jpeg" ? (
@@ -61,8 +67,8 @@ export default ({ data }) => (
                   ): (
 
                   //  if video
-//autoPlay loop
-                    <video autoPlay loop muted playsInline className="work_video">
+                      //autoPlay loop
+                    <video autoPlay muted playsInline className="work_video">
                       <source src={file.url} type="video/mp4"></source>
                     </video>
                   )

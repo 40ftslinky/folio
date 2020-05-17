@@ -21,8 +21,7 @@ https://fonts.googleapis.com/css?family=Inconsolata&text=hello
   /* font-weight:300; */
   --xbold-type: "Raleway", Arial, sans-serif;
   /* font-weight:900; */
-
-
+  /* */
   /* */
   --vh-80: 80vh;
   --vh-100: 100vh;
@@ -30,6 +29,7 @@ https://fonts.googleapis.com/css?family=Inconsolata&text=hello
   --trans_lr_fadein: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
   --trans_lr_fadeout: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
   /*  */
+  /* */
   /* RGB */
   --orange : rgba(255, 166, 89, 1);
   /* #FFA659 - orange */
@@ -43,7 +43,8 @@ https://fonts.googleapis.com/css?family=Inconsolata&text=hello
   --dark-grey-50: rgba(54, 54, 54, 0.5);
   /* #363636 - dark grey */
   --playfair: 'Playfair Display', serif;
-
+  /* */
+  /* */
 }
 
 
