@@ -40,6 +40,7 @@ const Layout = ({ children }) => (
           {/* add custom font */}
           {/* Raleway */}
           <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900&display=swap" rel="stylesheet" />
+          
           {/* add cdn jquery */}
           <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
