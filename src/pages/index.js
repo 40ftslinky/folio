@@ -54,7 +54,7 @@ export const pageQuery = graphql`
               }
             }
             heroImage {
-              fluid(maxHeight: 1080, quality: 90) {
+              fluid(maxHeight: 1080, quality: 75) {
                 ...GatsbyContentfulFluid
               }
             }

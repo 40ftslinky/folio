@@ -89,7 +89,8 @@ export default ({ data }) => {
             <div className="client_logo">
               <img
                 // id={data.contentfulClients.clientLogo.title}
-                alt={data.contentfulClients.clientLogo.description}
+                // alt={data.contentfulClients.clientLogo.description}
+                alt={data.contentfulClients.clientLogo.title}
                 src={file.url} // fixed.src does not work for svg
                 width="150"
               />
@@ -110,6 +111,9 @@ export const aboutQuery = graphql`
     contentfulClients(title: {eq: "Clients Worked With"}) {
       title
       clientLogo {
+        fluid(maxHeight: 300, quality: 75) {
+          ...GatsbyContentfulFluid
+        }
         title
         description
         file {

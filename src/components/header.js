@@ -59,7 +59,8 @@ const Header = ({ siteTitle, menuLinks }) => (
                   <Link
                     className="menu_item"
                     activeClassName="menu_item--active"
-                    to={link.link}>
+                    to={link.link}
+                  >
                     {link.name}
                   </Link>
                 </li>

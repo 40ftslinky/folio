@@ -17,15 +17,15 @@ const DropDownLink = () => (
       }
     `}
     render={data => {
-      return data.allContentfulBlog.edges.map((edge,i) => {
+      return  data.allContentfulBlog.edges.map((edge,i) => {
         return (
           <li className="menu_item-dropdown" key={'m_i-d' + i}>
-          <Link
-            to={edge.node.slug}
+          <a
+            href={'../' + edge.node.slug}
             className="dropdown-item"
           >
             {edge.node.title}
-          </Link>
+          </a>
           </li>
         )
       })

@@ -7,8 +7,9 @@ https://fonts.googleapis.com/css?family=Inconsolata&text=hello
 
 :root {
   --main-color: #50e3c2; /* green */
+  --alt_green: #00ffae; /* alt-green */
   --main-color-light: #8fedd8; /* light-green */
-  --main-color-dark: #00856A; /* dark-green */
+  --main-color-dark: #008C6E; /* dark-green #00856A */
   --main-secondary-color: #BC85FF; /* purple */
   --main-secondary-color-dark: #8B63BD; /* dark-purple */
   --main-dark-grey: #363636; /* dark grey */
@@ -37,6 +38,8 @@ https://fonts.googleapis.com/css?family=Inconsolata&text=hello
   /* #BC85FF - purple */
   --green: rgba(80, 227, 194, 1);
   /* #50e3c2 - green */
+  --dark-green: rgba(0, 140, 110, 1);
+  /* dark-green #008C6E */
   --light-green: rgba(143, 237, 216, 1);
   /* #8fedd8 - light-green */
   --dark-grey: rgba(54, 54, 54, 1);

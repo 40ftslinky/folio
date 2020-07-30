@@ -21,7 +21,12 @@ https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp/
 
 - [ ] add zapier / airtable integration
 
-- [ ]
+- [ ] other
+
+### SEO/UX
+
+- [ ] import description/client URL for logos
+- [ ] add cards
 
 
 ## note: content changes

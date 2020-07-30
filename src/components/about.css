@@ -29,6 +29,9 @@
 }
 
 .about_title {
+  color:var(--green);
+  /* background-color: var(--dark-grey); */
+  /* filter:drop-shadow(1px 1px 0px var(--dark-grey)) */
 }
 
 .about_description {
@@ -47,6 +50,26 @@
 .about_copy p.copy {
   font-size: 1.2rem;
   line-height: 1.75;
+}
+
+@media screen and (min-width: 48.01em) {
+  .about_copy ul {
+      column-count: 2;
+  }
+}
+@media screen and (max-width: 48em) {
+  .about_copy li {
+      display: inline-block;
+      margin-right: 2rem;
+      list-style: disc;
+  }
+  .about_copy li:before {
+    content: '\25CF';
+    display: inline-block;
+    position: absolute;
+    margin-left: -1.0rem;
+    margin-top: 0.25rem;
+  }
 }
 
 .about_copy a {}

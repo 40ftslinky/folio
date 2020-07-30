@@ -95,19 +95,19 @@ export const query = graphql`
           html
         }
       }
-      description{
+      description {
         childMarkdownRemark {
           html
         }
       }
       heroImage {
-        fluid(maxHeight: 1080, quality: 90) {
+        fluid(maxHeight: 1080, quality: 75) {
           ...GatsbyContentfulFluid
         }
       }
       articleImage {
         id
-        fluid(maxHeight: 1080, quality: 90) {
+        fluid(maxHeight: 1080, quality: 75) {
           ...GatsbyContentfulFluid
         }
         description

@@ -40,13 +40,17 @@ const Layout = ({ children }) => (
           {/* add custom font */}
           {/* Raleway */}
           <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900&display=swap" rel="stylesheet" />
-          
+          {/* add custom font */}
+          {/* DM Sans */}
+          <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet"/>
           {/* add cdn jquery */}
+          {/*
           <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
             crossOrigin="anonymous"
           />
+          */}
           {/* <script>
             $(window).scroll(function () {
               if ($(window).scrollTop() > 10) {
