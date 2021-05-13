@@ -1,8 +1,8 @@
 import React from "react"
-import img from 'gatsby-image'
+// import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -11,7 +11,7 @@ const Bold = ({ children }) => <span className="bold">{children}</span>
 const Inline = ({ children }) => <span className="inline_src">{children}</span>
 // const Text = ({ children }) => <p className="align-center">{children}</p>
 
-export default ({ data }) => {
+const aboutData = ({ data }) => {
   // https://github.com/Khaledgarbaya/rich-text-gatsby/blob/master/src/pages/index.js
   const aboutRichContent = data.allContentfulAbout.nodes[0]
   const options = {
@@ -60,48 +60,47 @@ export default ({ data }) => {
     },
   }
 
-
   return  (
     <Layout>
 
-    <SEO title="About" />
+    <Seo title="About" />
 
-    <div className="about_inner">
+    <section className="about_inner">
       <div className="about_info">
         <div className="about_text_wrap section_wrap">
-          <h1 className="about_title">About{data.allContentfulAbout.title}</h1>
-          <div className="about_description">
+          <h1 className="about_title">{data.contentfulAbout.title}</h1>
+          {/* <div className="about_description">
             <p><span>&nbsp;Bio Goes Here&nbsp;</span></p>
-          </div>
+          </div> */}
           <div className="about_copy">
-            {documentToReactComponents(aboutRichContent.description.json, options)}
+            {documentToReactComponents(JSON.parse(aboutRichContent.description.raw, options))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div className="client_section">
+    <section className="client_section" id="clients">
       <div className="client_title section_wrap">
         <h3 className="client_title_heading">{data.contentfulClients.title}</h3>
       </div>
       <div className="client_wrap section_wrap">
-          {data.contentfulClients.clientLogo.map(({ file }) => ( // fixed does not work for svg
+          {data.contentfulClients.clientLogo.map(({ file, index }) => ( // fixed does not work for svg
             <div className="client_logo">
               <img
-                // id={data.contentfulClients.clientLogo.title}
-                // alt={data.contentfulClients.clientLogo.description}
                 alt={data.contentfulClients.clientLogo.title}
-                src={file.url} // fixed.src does not work for svg
+                src={file.url} 
+                // fixed.src does not work for svg
                 width="150"
               />
             </div>
           ))}
       </div>
-    </div>
+    </section>
 
     </Layout>
   )
-}
+};
+export default aboutData;
 
 
 
@@ -111,9 +110,9 @@ export const aboutQuery = graphql`
     contentfulClients(title: {eq: "Clients Worked With"}) {
       title
       clientLogo {
-        fluid(maxHeight: 300, quality: 75) {
-          ...GatsbyContentfulFluid
-        }
+        gatsbyImageData(
+          placeholder: BLURRED
+        )        
         title
         description
         file {
@@ -125,9 +124,12 @@ export const aboutQuery = graphql`
       nodes {
         title
         description {
-          json
+          raw
         }
       }
+    }
+    contentfulAbout {
+      title
     }
   }
 `

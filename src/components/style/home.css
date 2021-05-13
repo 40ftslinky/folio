@@ -1,0 +1,36 @@
+/* home */
+
+
+.btn  {
+  background-color: var(--main-color);
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: var(--main-secondary-color);
+  transition: var(--trans_lr_fadein);
+  transform: scale(1.05);
+  letter-spacing: 1.01;
+}
+
+section.section-padding {
+    height: 80vh;
+}
+
+.section-padding ._info {
+    padding-top: 15vh;
+}
+
+.section-padding h1 {
+    font-size: 70px;
+    max-width: 800px;
+}
+
+.section-padding ._content {
+    max-width: 40vw;
+    margin-bottom: 3rem;
+}

@@ -2,13 +2,13 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
-import "../components/basic.css"
+import "../components/style/basic.css"
 
 const SecondPage = () => (
   <Layout>
-    <SEO title="Page two" />
+    <Seo title="Page two" />
 
     <div className="page_inner">
       <div className="page_info">

@@ -106,7 +106,7 @@
 .about_copy a:hover {
   background-color: var(--main-secondary-color);
   transition: var(--trans_lr_fadein);
-  transform: scale(1.05);
+  transform: scale(1.025);
   letter-spacing: 1.01;
 }
 

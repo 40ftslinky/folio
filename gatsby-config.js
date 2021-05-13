@@ -7,9 +7,14 @@ module.exports = {
       {
          name:'About',
          link:'/about'
-      }
+      },
+      {
+        name:'Contact',
+        link:'/contact'
+     }
     ]
   },
+  /* Your site config here */
   plugins: [
       {
         resolve: 'gatsby-source-contentful',
@@ -35,9 +40,26 @@ module.exports = {
         },
       },
     // `gatsby-plugin-eslint`,
-    `gatsby-transformer-remark`,
-    `gatsby-transformer-sharp`,
+    // `gatsby-transformer-remark`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-video-poster`,
+            options: {
+              // Size of the poster in pixels
+              // By default width is 1920px (HD video width)
+              // If your container is smaller, you should specify a smaller size
+              width: 720,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,

@@ -23,3 +23,20 @@
 }
 
 .boogey { color: red; }
+
+
+.btn  {
+  background-color: var(--main-color);
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: var(--main-secondary-color);
+  transition: var(--trans_lr_fadein);
+  transform: scale(1.05);
+  letter-spacing: 1.01;
+}

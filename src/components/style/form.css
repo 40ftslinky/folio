@@ -1,0 +1,176 @@
+
+/* --------------------------------- */
+/* FORM */
+/* --------------------------------- */
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+}
+
+.formrow {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-evenly;
+  margin: 8px 0 12px;
+}
+
+.formrow label {
+  font-size: 0.8rem;
+  color: var(--light-grey);
+  margin-bottom:5px;
+}
+
+.formrow input, .formrow textarea {
+  color: var(--dark-grey);
+  width: 100%;
+  max-width: 360px;
+  padding: 5px 0 ;
+  text-decoration: none;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  border-bottom:2px solid var(--main-color);
+  background: rgba(0, 0, 0, 0);
+  transition: all 0.2s ease-in-out;
+  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+}
+
+.formrow textarea {
+  min-height: 2rem;
+}
+
+input[type=text],
+input[type=email],
+input[type=phone],
+input[type=number],
+input[type=tel],
+input[type=date],
+textarea {
+    border:0;
+    border-radius:0;
+    border-bottom:2px solid var(--main-color);
+}
+
+textarea {
+  padding: 0;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=phone]:focus,
+input[type=number]:focus,
+input[type=tel]:focus,
+input[type=date]:focus,
+textarea:focus {
+    background: rgba(143, 237, 216, 0.2);
+    border-bottom:2px solid var(--dark-green);
+    outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 0.5rem;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 20px;
+  background:var(--main-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: var(--trans_lr_fadeout);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: none;
+  border: solid 2px var(--main-color);
+}
+
+button:hover {
+  background:var(--main-secondary-color);
+  border-color:var(--main-secondary-color);
+  /* -webkit-box-shadow: 0 0 10px 0 var(--light-grey-50);
+   -moz-box-shadow: 0 0 10px 0 var(--light-grey-50);
+   box-shadow: 0 0 10px 0 var(--light-grey-50); */
+}    
+
+/* FLOAT LABLES */
+/* ------------------------------------ */
+
+label {
+  transform: scale(1);
+  transform-origin: left;
+  top: -24px;
+  /* position: absolute; */
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  z-index: -1;
+}
+textarea label {
+  top: -48px;
+}
+
+input:valid
+input:focus + label,
+textarea:focus + label,
+input:focus-within + label,
+textarea:focus-within + label {
+  transform: scale(0.8);
+  top: -57px;
+}
+textarea:focus + label,
+textarea:focus-within + label {
+  top: -87px;
+  margin-top: 5px;
+}
+
+/* input:placeholder {display: none;} */
+
+input:valid ~ button,
+input:valid ~ input[type="submit"], 
+textarea:valid ~ input[type="submit"] {
+  -webkit-animation: appear 1s forwards;
+  animation: appear 1s forwards;
+}
+
+/* button, */
+input:invalid ~ button,
+input[type="submit"],
+input:invalid ~ input[type="submit"], 
+textarea:invalid ~ input[type="submit"] {
+  display: none;
+}
+
+button {
+  outline-color: var(--main-color-dark);
+}
+
+@-webkit-keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+/* MEDIA QUERIES */
+/* ------------------------------------ */
+
+/* Extra Large Sreen / ≥ 1280px */
+@media screen and (min-width: 80em) {
+    
+}
+
+/* max-width 768px, portrait tablet */
+@media only screen and (max-width: 48em) {
+
+}
+
+@media only screen and (max-width: 36em) {
+
+}

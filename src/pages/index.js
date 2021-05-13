@@ -1,9 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 import { graphql } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Intro from "../components/intro"
+import Seo from "../components/seo"
 
 
 const BlogPost = ({node}) => {
@@ -11,7 +13,9 @@ const BlogPost = ({node}) => {
     <article className="work_feed-item">
       <div className="work_feed_container">
         <figure className="work_feed-bg" id={node.title} style={{ }} >
-          <img src={node.heroImage.fluid.src} alt={node.title} />
+          {/* <img src={node.heroImage.fluid.src} alt={node.title} /> */}
+          <GatsbyImage image={node.heroImage.gatsbyImageData} alt={node.title} />
+
         </figure>
         <div className="work_feed-info">
           <Link to={node.slug}>
@@ -28,8 +32,11 @@ const BlogPost = ({node}) => {
 }
 const IndexPage = ({data}) => (
   <Layout>
-    <SEO title="Home" />
-    <section>
+    <Seo title="Home" />
+    
+    <Intro></Intro>
+
+    <section id="projects"> 
       {data.allContentfulBlog.edges.map((edge,i) => <BlogPost node={edge.node}  key={'proj' + i} />)}
     </section>
   </Layout>
@@ -37,29 +44,36 @@ const IndexPage = ({data}) => (
 export default IndexPage
 
 export const pageQuery = graphql`
-   query pageQuery {
-    allContentfulBlog (
-    filter: {
-      node_locale: {eq: "en-US"}
-    },
-    sort:{ fields: [publishDate], order: DESC }
-    ) {
-        edges {
-          node {
-            title
-            slug
-            body {
-              childMarkdownRemark {
-                excerpt
-              }
-            }
-            heroImage {
-              fluid(maxHeight: 1080, quality: 75) {
-                ...GatsbyContentfulFluid
-              }
+  query pageQuery {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+  allContentfulBlog (
+  filter: {
+    node_locale: {eq: "en-US"}
+  },
+  sort:{ fields: [publishDate], order: DESC }
+  ) {
+      edges {
+        node {
+          title
+          slug
+          body {
+            childMarkdownRemark {
+              excerpt
             }
           }
+          heroImage {
+            gatsbyImageData(
+              layout: FULL_WIDTH
+              placeholder: BLURRED
+            )
+          }
         }
+      }
     }
-   }
+  }
 `

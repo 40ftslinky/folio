@@ -196,7 +196,7 @@ li.navbar-item {
   font-size: 18px;
 }
 
-@media (min-width: 64.001rem and max-width: 83rem) {
+@media (min-width: 64.001rem) and (max-width: 83rem) {
   .navbar {
     max-width: 90vw;
     margin-left:calc((100vw - 90vw) / 2); /* 12.5vw */
@@ -289,41 +289,47 @@ nav, .navigation{
         font-weight: 400;
         text-transform: none;
       }
-      .navigation ul li a.dropdown-toggle{
-        height: 90px;
-      }
+      /* @media (min-width: 64.001rem) { */
+        .navigation ul li a.dropdown-toggle{
+          height: 90px;
+        }
+      /* } */
       @media (max-width: 83rem) {
         .navigation ul li a.dropdown-toggle {
           height: auto !important;
         }
       }
+
+      @media (min-width: 64.001rem) and (max-width: 83rem){
+        #navigation_id.navigation ul li.navbar-item a.dropdown-toggle {
+            height: 90px !important;
+        }
+      }
+
       .navigation ul li a:hover{
         color:#fff;
       }
 
       .navigation ul ul.dropdown{
-        /* display: none; */
-        /* background: var(--dark-grey); */
-        /* background: rgba(45, 45, 45, 0.95); */
-        position: absolute;
         top: 100%;
         min-width: 7rem;
         margin-top: 0;
-        margin-left: -7rem;
+        margin-left: -0.5rem;
         left: 0;
         text-align: left;
         float: right;
-
         -webkit-transition: all 0.52s ease;
         -o-transition: all 0.25s ease;
         transition: all 0.25s ease;
       }
+
       @media (min-width: 64.001rem) {
         .navigation ul ul.dropdown {
           background: rgba(45, 45, 45, 0.95);
           width: 320px;
           opacity: 0;
           visibility: hidden;
+          position: absolute;
           z-index: 0;
           max-height: 0;
           overflow: hidden;
@@ -393,8 +399,20 @@ nav, .navigation{
       float: none;
       text-align: center;
       width:100%;
-
+      /* height:0;
+      visibility: hidden; */
     }
+    .navigation ul.navbar-list-mob li ul {
+      height:0;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .navigation ul.navbar-list-mob li:focus ~ ul {
+      height:100%;
+      opacity: 1;
+      visibility: visible;
+    }
+
     .navbar-item_dropdown {
 
     }

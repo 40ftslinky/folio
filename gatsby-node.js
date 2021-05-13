@@ -13,6 +13,14 @@ exports.onCreateWebpackConfig = ({
   setWebpackConfig({
     externals: {
       jquery: 'jQuery', // important: 'Q' capitalized
+    },
+    resolve: {
+      fallback: {
+        path: require.resolve('path-browserify'),
+        stream: require.resolve('stream-browserify'),
+        util: require.resolve('util/'),
+        fs: false,
+      }
     }
   })
 }

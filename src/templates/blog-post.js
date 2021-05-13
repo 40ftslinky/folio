@@ -1,9 +1,9 @@
 import React from 'react'
-import img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 // import Video from "../components/video"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 /*
 Note:
@@ -11,10 +11,10 @@ Once you make changes in Contentful editor,
 you need to restart your development server.
 */
 
-export default ({ data }) => (
+const contentData = ({ data }) => (
 
   <Layout>
-    <SEO title="Work" />
+    <Seo title={data.contentfulBlog.title} />
     <div className="work_inner">
 
       <div className="work_info">
@@ -38,7 +38,7 @@ export default ({ data }) => (
       <div className="work_gallery">
         <div className="work_items">
 
-            {data.contentfulBlog.articleImage.map(({ file, description, fluid }, i) => (
+            {data.contentfulBlog.articleImage.map(({ file, description }, i) => (
               <div className="work_item" key={'item_' + i} >
 
                     {description.length ? (
@@ -53,14 +53,15 @@ export default ({ data }) => (
                     )
                   }
 
+                  {file.contentType === "image/jpeg" ? (
 
-              {file.contentType === "image/jpeg" ? (
-
-                    <img className="work_img"
+                    <GatsbyImage 
+                      className="work_img"
+                      image={data.contentfulBlog.articleImage[i].gatsbyImageData}
                       alt={data.contentfulBlog.title + '_' + i}
                       key={'image_' + i}
                       // src={file.url}
-                      src={fluid.src}
+                      // src={fluid.src}
                       // fluid={data.contentfulBlog.articleImage[i].fluid.src}
                     />
 
@@ -68,7 +69,7 @@ export default ({ data }) => (
 
                   //  if video
                       //autoPlay loop
-                    <video autoPlay muted playsInline className="work_video">
+                    <video autoPlay loop muted playsInline className="work_video">
                       <source src={file.url} type="video/mp4"></source>
                     </video>
                   )
@@ -84,6 +85,7 @@ export default ({ data }) => (
     </div>
   </Layout>
 )
+export default contentData
 
 export const query = graphql`
   query WorkQuery($slug: String!){
@@ -101,15 +103,18 @@ export const query = graphql`
         }
       }
       heroImage {
-        fluid(maxHeight: 1080, quality: 75) {
-          ...GatsbyContentfulFluid
-        }
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          placeholder: BLURRED
+          formats: AUTO
+        )
       }
       articleImage {
         id
-        fluid(maxHeight: 1080, quality: 75) {
-          ...GatsbyContentfulFluid
-        }
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          placeholder: BLURRED
+        )
         description
         file {
           url

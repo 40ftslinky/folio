@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 
 class Gallery extends React.Component {
   render() {
@@ -8,7 +8,7 @@ class Gallery extends React.Component {
       <div>
           {images.map((img, idx) => (
 
-                <Img fluid={img.node.childImageSharp.fluid}/>
+                <GatsbyImage image={img.node.childImageSharp.gatsbyImageData} />
 
           ))}
       </div>

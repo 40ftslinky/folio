@@ -5,6 +5,20 @@ limiting the font to known letters — perhaps for a logo or heading, e.g:
 https://fonts.googleapis.com/css?family=Inconsolata&text=hello
 */
 
+/* 
+https://coolors.co/ffffff-50e3c2-8f50e2-7b2de1-0fbd94-266d5d-2d2d2d
+https://coolors.co/ffffff-ebebeb-999999-2d2d2d-8f50e2-7b2de1-50e3c2-0fbd94-266d5d
+
+--white: #ffffff;
+--turquoise: #50e3c2;
+--purple-x-11: #8f50e2;
+--blue-violet: #7b2de1;
+--mountain-meadow: #0fbd94;
+--illuminating-emerald: #009471;
+--jet: #2d2d2d;
+
+*/
+
 :root {
   --main-color: #50e3c2; /* green */
   --alt_green: #00ffae; /* alt-green */
@@ -13,6 +27,7 @@ https://fonts.googleapis.com/css?family=Inconsolata&text=hello
   --main-secondary-color: #BC85FF; /* purple */
   --main-secondary-color-dark: #8B63BD; /* dark-purple */
   --main-dark-grey: #363636; /* dark grey */
+  --main-light-grey: #999999; /* light grey */
   /* */
   --normal-type: "Raleway", Arial, sans-serif;
   /* font-weight:400; */
@@ -41,7 +56,11 @@ https://fonts.googleapis.com/css?family=Inconsolata&text=hello
   --dark-green: rgba(0, 140, 110, 1);
   /* dark-green #008C6E */
   --light-green: rgba(143, 237, 216, 1);
+  --light-green-50: rgba(143, 237, 216, 0.5);
   /* #8fedd8 - light-green */
+  --light-grey: rgba(153, 153, 153, 1);
+  --light-grey-50: rgba(153, 153, 153, 0.5);
+
   --dark-grey: rgba(54, 54, 54, 1);
   --dark-grey-50: rgba(54, 54, 54, 0.5);
   /* #363636 - dark grey */
@@ -86,7 +105,12 @@ footer {
   font-size: .8em;
 }
 
-
+::selection {
+  background: #50e3c2; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #50e3c2; /* Gecko Browsers */
+}
 
 /* Small Sreen / ≥ 568px */
 @media screen and (max-width: 35.5em) {

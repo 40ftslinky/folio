@@ -1,0 +1,132 @@
+/* contact --------------------------------- */
+
+
+/* .contact_inner {} */
+
+.section_wrap,
+.contact_text_wrap {
+  width: 90%;
+  max-width: 90vw;
+  margin: 2rem auto;
+  clear: both;
+}
+
+/* Large Sreen / ≥ 1024px */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Extra Large Sreen / ≥ 1280px */
+@media screen and (min-width: 80em) {
+    .section_wrap {
+      max-width: 1200px;
+    }
+}
+
+.contact_info {
+  padding: 10vh 0 6vh ;
+}
+
+.contact_title {
+  color:var(--green);
+  /* background-color: var(--dark-grey); */
+  /* filter:drop-shadow(1px 1px 0px var(--dark-grey)) */
+}
+
+.contact_description {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+.contact_description span {
+  color: #fff;
+  background-color: #50e3c2;
+}
+/* .contact_body {} */
+.contact_copy {
+  max-width: 800px;
+  /* columns: 2; */
+}
+.contact_copy p.copy {
+  font-size: 1.2rem;
+  line-height: 1.75;
+}
+
+@media screen and (min-width: 48.01em) {
+  .contact_copy ul {
+      column-count: 2;
+  }
+}
+@media screen and (max-width: 48em) {
+  .contact_copy li {
+      display: inline-block;
+      margin-right: 2rem;
+      list-style: disc;
+  }
+  .contact_copy li:before {
+    content: '\25CF';
+    display: inline-block;
+    position: absolute;
+    margin-left: -1.0rem;
+    margin-top: 0.25rem;
+  }
+}
+
+/* .contact_copy a {}
+.contact_copy a:hover {} */
+
+.contact_copy a {
+  background-color: var(--main-color);
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.contact_copy p a,
+.contact_copy a {
+  display: block;
+  max-width: 300px;
+  text-align: center;
+  margin: 2em 0;
+  transition: var(--trans_lr_fadeout);
+  transform: scale(1);
+}
+/* max-width 768px, portrait tablet */
+@media only screen and (max-width: 48em) {
+  .contact_copy a {
+    max-width: unset !important;
+    width: 100% !important;
+    transition: var(--trans_lr_fadein);
+    transform: scale(1);
+  }
+}
+
+.contact_copy a:hover {
+  background-color: var(--main-secondary-color);
+  transition: var(--trans_lr_fadein);
+  transform: scale(1.05);
+  letter-spacing: 1.01;
+}
+
+.contact_copy a:active {
+  background-color: var(--main-dark-grey);
+}
+
+.contact_copy a:visited {
+  background-color: white;
+}
+
+/* Extra Large Sreen / ≥ 1280px */
+@media screen and (min-width: 80em) {
+  /* .contact_info {} */
+}
+
+
+/* max-width 768px, portrait tablet */
+@media only screen and (max-width: 48em) {
+  .contact_info { padding: 10vh 15px 12vh ; }
+}
+@media only screen and (max-width: 36em) {
+  .contact_info { padding-top: 3vh; }
+}
