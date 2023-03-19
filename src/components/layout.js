@@ -38,8 +38,11 @@ const Layout = ({ children }) => {
             title={'title'}
             meta={[
               { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
+              { name: 'keywords', content: 'Agency, Creative, Digital, Print, Brand, Design, Development, UX, Sydney, Australia' },
             ]}
+            bodyAttributes={{
+              class: 'new-class-for-body'
+            }}
           >
             {/* add custom font */}
             {/* playfair */}

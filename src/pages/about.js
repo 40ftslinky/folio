@@ -4,6 +4,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import "../components/style/about.css"
+
 import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
@@ -92,6 +94,7 @@ const aboutData = ({ data }) => {
                 // fixed.src does not work for svg
                 width="150"
               />
+              {/* <GatsbyImage image={data.contentfulClients.clientLogo.gatsbyImageData} alt={data.title} /> */}
             </div>
           ))}
       </div>

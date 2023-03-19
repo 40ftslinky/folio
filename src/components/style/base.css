@@ -26,8 +26,10 @@ https://coolors.co/ffffff-ebebeb-999999-2d2d2d-8f50e2-7b2de1-50e3c2-0fbd94-266d5
   --main-color-dark: #008C6E; /* dark-green #00856A */
   --main-secondary-color: #BC85FF; /* purple */
   --main-secondary-color-dark: #8B63BD; /* dark-purple */
+  --main-secondary-color-light:#D8B8FF;  /* light-purple */
   --main-dark-grey: #363636; /* dark grey */
   --main-light-grey: #999999; /* light grey */
+  --v-light-grey: #f1f5fa; /* very light grey */
   /* */
   --normal-type: "Raleway", Arial, sans-serif;
   /* font-weight:400; */
@@ -49,7 +51,10 @@ https://coolors.co/ffffff-ebebeb-999999-2d2d2d-8f50e2-7b2de1-50e3c2-0fbd94-266d5
   /* RGB */
   --orange : rgba(255, 166, 89, 1);
   /* #FFA659 - orange */
+  --light-purple: rgba(216, 184, 255, 1);
   --purple: rgba(188, 133, 255, 1);
+  --dark-purple: rgba(139, 99, 189, 1);
+  --dark-purple-50: rgba(139, 99, 189, 0.5);
   /* #BC85FF - purple */
   --green: rgba(80, 227, 194, 1);
   /* #50e3c2 - green */
@@ -64,6 +69,11 @@ https://coolors.co/ffffff-ebebeb-999999-2d2d2d-8f50e2-7b2de1-50e3c2-0fbd94-266d5
   --dark-grey: rgba(54, 54, 54, 1);
   --dark-grey-50: rgba(54, 54, 54, 0.5);
   /* #363636 - dark grey */
+  /*  */
+  /* GRADIENTS */
+  --brand-grad-purp-green:background-image: linear-gradient(90deg, var(--main-secondary-color) 28%, var(--main-color) 100%);
+  --brand-grad-green-dgrn:background-image: linear-gradient(134deg, var(--main-color) 0%, var(--main-color-dark) 100%);
+  /*  */
   --playfair: 'Playfair Display', serif;
   /* */
   /* */
@@ -112,6 +122,18 @@ footer {
   background: #50e3c2; /* Gecko Browsers */
 }
 
+/* typography */
+
+h1, .h1 {
+  font-size: 70px;
+  line-height: 1.1;
+}
+@media screen and (min-width: 48em) and (max-width: 90em) {
+  h1, .h1 {
+    font-size: 5.125vw;
+  }
+}
+
 /* Small Sreen / ≥ 568px */
 @media screen and (max-width: 35.5em) {
 
@@ -130,4 +152,30 @@ footer {
 /* Extra Large Sreen / ≥ 1280px */
 @media screen and (min-width: 80em) {
 
+}
+
+/* Extra Large Sreen / ≥ 1440px */
+@media screen and (min-width: 90em) {
+
+}
+
+
+
+/* animations */
+
+
+.filter-animated {
+  animation: filter-animation 5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes filter-animation {
+  0% {
+      filter: grayscale(0) ;
+      /* brightness(1); */
+  }
+
+  100% {
+      filter: grayscale(1) ;
+      /* brightness(2); */
+  }
 }

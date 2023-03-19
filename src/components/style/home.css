@@ -1,36 +1,50 @@
-/* home */
+/* home ( front matter ) --------------------------------- */
 
 
-.btn  {
-  background-color: var(--main-color);
-  color: white;
-  padding: 1em 1.5em;
-  text-decoration: none;
-  text-transform: uppercase;
-  border-radius: 5px;
-}
-
-.btn:hover {
-  background-color: var(--main-secondary-color);
-  transition: var(--trans_lr_fadein);
-  transform: scale(1.05);
-  letter-spacing: 1.01;
-}
 
 section.section-padding {
     height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .section-padding ._info {
-    padding-top: 15vh;
+    /* padding-top: 15vh; */
+}
+@media only screen and (max-width: 36em) {
+  .section-padding ._info {
+    /* padding-top: 5vh; */
+  }
+
 }
 
 .section-padding h1 {
-    font-size: 70px;
+    /* font-size: 70px; */
+    font-size: 5.125vw;
     max-width: 800px;
 }
-
-.section-padding ._content {
-    max-width: 40vw;
-    margin-bottom: 3rem;
+@media only screen and (max-width: 36em) {
+  .section-padding h1 {
+    font-size: 50px;
+  }
 }
+@media screen and (min-width: 64em) {
+    .section-padding ._content {
+      max-width: 40vw;
+      /* margin-bottom: 4rem; */
+  }
+}
+.section-padding ._content {
+  /* max-width: 40vw; */
+  margin-bottom: 4rem;
+}
+
+@media only screen and (max-width: 36em) {
+  .section-padding ._content {
+    max-width: unset;
+    font-size: 20px;
+  }
+
+}
+

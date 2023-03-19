@@ -17,6 +17,3 @@
 import "./src/components/style/layout.css"
 import "./src/components/style/base.css"
 import "./src/components/style/custom.css"
-import "./src/components/style/home.css"
-import "./src/components/style/about.css"
-import "./src/components/style/work.css"

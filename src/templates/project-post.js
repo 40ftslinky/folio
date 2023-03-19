@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 // import Video from "../components/video"
 import Seo from "../components/seo"
 
+import "../components/style/work.css"
+
 /*
 Note:
 Once you make changes in Contentful editor,
@@ -60,9 +62,6 @@ const contentData = ({ data }) => (
                       image={data.contentfulBlog.articleImage[i].gatsbyImageData}
                       alt={data.contentfulBlog.title + '_' + i}
                       key={'image_' + i}
-                      // src={file.url}
-                      // src={fluid.src}
-                      // fluid={data.contentfulBlog.articleImage[i].fluid.src}
                     />
 
                   ): (

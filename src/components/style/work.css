@@ -1,13 +1,10 @@
 /* work --------------------------------- */
 
-
-.work_inner {}
   .work_text_wrap{
     max-width: 1200px;
     margin: 2rem auto;
 
   }
-.work_hero_image_wrap { }
 .work_hero_image_wrap img,
 .work_item img {
   display: block;
@@ -17,85 +14,41 @@
   width: 100%;
 }
 .work_info { padding: 10vh 0 12vh ; }
-.work_title {
-  /* font-family: effra, sans-serif;  */
-}
+
 .work_description {
   font-size: 1.4rem;
   font-weight: 300;
 }
-/* .work_description span {
-  color: #fff;
-  background-color: #50e3c2;
-} */
+
 .work_description,
 .work_body {
   max-width: 800px;
-  /* columns: 2; */
 }
-.work_gallery {}
-.work_items  {}
+
 .work_item {
-  /* height: 100%; */
   position: relative;
 }
-.work_item {
-  /* background-color: var(--light-green); */
-}
-
-.work_item img.work_img,
-.work_item video
- {
-
-}
-
-.work_item:hover img.work_img,
-.work_item:hover video
- {
-
-}
-
-/* If you want to add a color overlay, you can make use of pseudo elements like ::before: */
-/*  */
-/*  */
 
 .work_item-desc_bg {
-  /* opacity: 0; */
   width: 100vw;
   height: 100px;
   position: absolute;
   display: block;
   z-index: 999;
-  /* top: 50%; */
   left: 50%;
   bottom:-50px;
-  /* margin: -150px 0 -50%  0; */
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  /* background-color: red; */
-  /* animation */
-  /* -webkit-transition-property: opacity,visibility;
-  transition-property: opacity,visibility;
-  -webkit-transition-timing-function: ease;
-  transition-timing-function: ease;
-  -webkit-transition-duration: 200ms;
-  transition-duration: 200ms;
-  -webkit-transition-delay: 0;
-  transition-delay: 0; */
 }
 
 .work_item-desc {
   opacity: 0;
   display: block;
   position: absolute;
-  /* top: 50%; */
-  /* left: 50%; */
   bottom:0px;
   width: 100vw;
   height: 0;
-  /* width: 300px;
-  height: 300px; */
   margin: 0;
   padding-top: 0;
   /* border-radius: 30vh; */
@@ -124,9 +77,6 @@
   padding: 5px 20px;
 }
 
-.work_item-desc_bg:hover {
-  /* opacity: 1; */
-}
 .work_item:hover .work_item-desc {
   opacity: 1;
   /*  */

@@ -56,13 +56,13 @@ const Header = ({ siteTitle, menuLinks }) => {
 
                       <a
                         className="nav-link dropdown-toggle"
-                        href="/#"
+                        href="/projects"
                         id="navbarDropdown"
-                        role="button"
+                        // role="link"
                         data-toggle="dropdown"
                         // aria-haspopup="true"
                         // aria-expanded="false"
-                        onClick={evt => evt.preventDefault()}
+                        // onClick={evt => evt.preventDefault()}
                       >
                         Projects
                       </a>
