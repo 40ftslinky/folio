@@ -1,8 +1,8 @@
 {
   "name": "40ftslinky-folio",
   "private": true,
-  "description": "v3 Update - Latest",
-  "version": "0.3.0",
+  "description": "v5 Update - Latest",
+  "version": "0.5.0",
   "author": "@40ftslinky",
   "dependencies": {
     "@contentful/rich-text-plain-text-renderer": "^16.0.10",
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "eslint": "^8.56.0",
-    "eslint-loader": "^4.0.2",
+    "eslint-webpack-plugin": "^4.0.2",
     "gatsby-plugin-eslint": "^4.0.4",
     "prettier": "^3.2.4"
   },
